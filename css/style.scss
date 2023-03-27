@@ -1,0 +1,385 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    height: 100vh;
+    background: linear-gradient(110deg, #9ec5fc 40%, #ae88d3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.container {
+    height: 85vh;
+    width: 70vw;
+    display: flex;
+    border-radius: 5px;
+}
+
+.img_contain {
+    background-image: url("../images/desktop.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    flex-grow: 4;
+    position: relative;
+    color: white;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    transition: filter .5s linear;
+    filter: brightness(80%);
+
+    &:hover {
+        filter: brightness(110%);
+    }
+
+    h1 {
+        position: absolute;
+        text-transform: capitalize;
+        top: 65%;
+        width: 85%;
+        font-size: 2.4em;
+        font-weight: bold;
+
+        a {
+            font-size: 0.8em;
+            color: white;
+            text-decoration: none;
+            font-weight: normal;
+            text-transform: none;
+        }
+    }
+
+    p {
+        align-self: flex-end;
+        text-align: right;
+        width: 90%;
+        min-height: 8vh;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        font-size: 1.1em;
+
+        span {
+            font-size: 2em;
+            margin-right: 0.5vw;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+        }
+    }
+}
+
+.form_contain {
+    background-color: rgb(255, 255, 255);
+    height: 100%;
+    flex-grow: 1.25;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+
+    h1 {
+        width: 85%;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: flex-start;
+        height: 80%;
+        width: 85%;
+        padding: 0px 2%;
+
+        label {
+
+            &[for="fullname"],
+            &[for="email"],
+            &[for="password"],
+            &[for="confirm_password"] {
+                font-weight: 400;
+                font-size: 1em;
+            }
+        }
+
+        input {
+
+            &[type="text"],
+            &[type="email"] {
+                height: 5vh;
+                padding: 1%;
+                width: 100%;
+                border-radius: 3px;
+                border: 1px solid rgba(206, 206, 206, 0.5);
+
+                &:focus {
+                    outline: none;
+                }
+            }
+        }
+    }
+
+    input[type="password"] {
+        height: 5vh;
+        padding: 1%;
+        width: 100%;
+        border-radius: 3px;
+        border: 1px solid rgba(206, 206, 206, 0.5);
+        font-size: 1.25em;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    form input {
+
+        &[type="text"]:hover,
+        &[type="email"]:hover {
+            transition: .5s;
+            border: 1px solid rebeccapurple;
+        }
+    }
+
+    input[type="password"]:hover {
+        transition: .5s;
+        border: 1px solid rebeccapurple;
+    }
+
+    form input {
+
+        &[type="text"]:focus,
+        &[type="email"]:focus {
+            transition: 0.5s;
+            transform: scale(1.02);
+        }
+    }
+
+    input {
+        &[type="password"]:focus {
+            transition: 0.5s;
+            transform: scale(1.02);
+        }
+
+        &::placeholder {
+            color: rgba(172, 172, 172, 0.5);
+            font-weight: 500;
+        }
+    }
+}
+
+.checkbox_contain {
+    padding: 1%;
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    align-items: center;
+
+    input {
+        align-self: flex-start;
+        margin-right: 3%;
+    }
+
+    label a {
+        font-weight: 700;
+    }
+}
+
+.form_contain input[type="submit"] {
+    background-color: rgb(3, 106, 240);
+    color: white;
+    width: 35%;
+    height: 5vh;
+    border-radius: 4px;
+    border: none;
+    font-size: 0.9em;
+    transition: all .25s linear;
+    cursor: pointer;
+
+    &:hover {
+        font-size: 1.1em;
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+}
+
+p.message {
+    color: red;
+}
+
+/* ----------------------------------------------------------------Media Queries---------------------------------------------------------- */
+
+// -----------------------------------------  LAPTOP
+
+@media screen and (max-width: 1024px) {
+    body {
+        background: linear-gradient(-110deg, #5c1559, #ff0505);
+    }
+
+    div.container {
+        width: 85vw;
+    }
+
+    .img_contain {
+        background-image: url("../images/tablet&laptop.jpg");
+        width: 50%;
+    }
+
+    .form_contain {
+        width: 50%;
+
+        form {
+            width: 85%;
+            background-color: #dbadad;
+            color: floralwhite;
+            align-items: center;
+
+            input {
+
+                &[type="text"],
+                &[type="email"],
+                &[type="password"] {
+                    width: 95%;
+                }
+            }
+        }
+
+        input[type="password"] {
+            width: 75%;
+        }
+    }
+
+    .img_contain {
+        h1 {
+            font-size: 2em;
+        }
+
+        p {
+            display: none;
+        }
+    }
+
+    .form_contain input[type="submit"] {
+        width: 60%;
+        align-self: center;
+        transition: transform 1s;
+
+        &:active {
+            transform: rotateX(360deg);
+        }
+    }
+}
+
+// ----------------------------------------------------   TABLET
+@media screen and(max-width:768px) {
+    .img_contain {
+        width: 45%;
+
+        h1 {
+            top: 50%;
+            transform: translateY(-50%);
+
+            br {
+                display: none;
+            }
+        }
+    }
+
+    .form_contain {
+        width: 55%;
+
+        form {
+            width: 90%;
+
+            input[type="text"],
+            input[type="password"],
+            input[type="email"] {
+                width: 90%;
+                align-self: center;
+            }
+
+            label {
+                align-self: flex-start;
+            }
+        }
+    }
+}
+
+// ---------------------------------------------   PHONE
+@media screen and (max-width: 425px) {
+
+    body {}
+
+    div.container {
+        width: 90vw;
+        height: 90vh;
+        background-color: black;
+    }
+
+    .img_contain {
+        display: none;
+    }
+
+    .form_contain {
+        background: url("../images/tablet&laptop.jpg");
+        background-size: cover;
+        background-position: center center;
+        padding: 0 1vw;
+        border-radius: 5px;
+        background-color: #000;
+        color: white;
+
+        h1 {
+            text-align: center;
+            font-size: 2.25em;
+        }
+
+        form {
+            opacity: .95;
+
+            label {
+                align-self: flex-start;
+            }
+        }
+    }
+
+    #fullname,
+    #email,
+    #password,
+    #confirm_password {
+        width: 90%;
+        align-self: center;
+
+    }
+
+
+    .form_contain form input[type="submit"] {
+        color: maroon;
+        background-color: indianred;
+        width: 75%;
+        font-size: 1.2em;
+        align-self: center;
+    }
+
+    .checkbox_contain {
+        width: 100%;
+        height: 5vh;
+
+        a {
+            color: blanchedalmond;
+            text-decoration: none;
+        }
+    }
+}
